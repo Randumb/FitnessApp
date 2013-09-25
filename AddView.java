@@ -12,9 +12,13 @@ public class AddView extends Activity implements OnClickListener {
     
 	private int donotselectview=1;
 	//Initializing all the views and the buttons
-	private TextView bicepcurls,exercisename,tricepextensions,shoulderpress,tricepdips,shoulderextensions,pushups,benchpress,dumbbellflys,pullups,chinups,seatedrows,shrugs,
-					 situps,crunches,squats,legextensions,legcurls,running,swimming,biking;
+	//private TextView exercisename;
+	private TextView bicepcurls, tricepextensions, shoulderpress, tricepdips, shoulderextensions,
+		pushups, benchpress, dumbbellflys, pullups, chinups, seatedrows, shrugs, situps, crunches,
+		squats, legextensions, legcurls, running, swimming, biking;
+	private Button lift_weights;
 	private Button add_calorie_intake;
+	private Button do_cardio;
 	
 	
 	/** Called when the activity is first created. */
@@ -31,10 +35,14 @@ public class AddView extends Activity implements OnClickListener {
         add_calorie_intake=(Button)findViewById(R.id.add_calorie_intake);
         add_calorie_intake.setOnClickListener(this);
         
-        //Shouldn't We have a button for Exercise text view objects?
-        //Adding the Exercise button object
-        //add_exercise=(Button)findViewById(R.id.add_exercise);
-        //add_exercise.setOnClickListener(this);
+        //Adding the lift_weights button object
+        lift_weights=(Button)findViewById(R.id.lift_weights);
+        lift_weights.setOnClickListener(this);
+        
+        //Adding the do_cardio button object
+        do_cardio=(Button)findViewById(R.id.do_cardio);
+        do_cardio.setOnClickListener(this);
+        
         
         //Adding TextView Objects
         exercisename=(TextView)findViewById(R.id.exercisename);
@@ -46,13 +54,13 @@ public class AddView extends Activity implements OnClickListener {
         tricepextensions=(TextView)findViewById(R.id.tricepextensions);
 		tricepextensions.setOnClickListener(this);
 		
-		tricepdips=(TextView)findViewById(R.id.tricepdips);
+	tricepdips=(TextView)findViewById(R.id.tricepdips);
 		tricepdips.setOnClickListener(this);
 		
         shoulderpress=(TextView)findViewById(R.id.shoulderpress);
 		shoulderpress.setOnClickListener(this);
 		
-		shoulderextensions=(TextView)findViewById(R.id.shoulderextensions);
+	shoulderextensions=(TextView)findViewById(R.id.shoulderextensions);
 		shoulderextensions.setOnClickListener(this);
 		
         pushups=(TextView)findViewById(R.id.pushups);
@@ -114,16 +122,18 @@ public class AddView extends Activity implements OnClickListener {
     	// find out which button  or textview was pushed based on its ID
     	switch (v.getId())
     	{
-    		case R.id.add_calorie_intake:  exercisename="Calorie Intake";
-    									   exerciseAttr1="Amount of Calories";
-    									   exerciseAttr2="Number of Portions";
-    									   exerciseNo=1;
-    									   break;
+    		case R.id.add_calorie_intake:
+    			exercisename="Calorie Intake";
+    			exerciseAttr1="Amount of Calories";
+    			exerciseAttr2="Number of Portions";
+    			exerciseNo=1;
+    			break;
            ///For non Touchable views like Arms Abs etc  									   
-    		case R.id.exercisename:		   donotselectview=0;
-    									   exercisename="";
-    									   exerciseAttr1="";
-    									   exerciseAttr2="";
+    		case R.id.exercisename:
+    			donotselectview=0;
+    			exercisename="";
+    			exerciseAttr1="";
+    			exerciseAttr2="";
     									   
     									   break;   
     		case R.id.bicepcurls:		   exercisename="Bicep Curls";
